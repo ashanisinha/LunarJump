@@ -12,6 +12,10 @@ public class GameManager : MonoBehaviour
     public float cloudSpawnTime = 1.0f;
     public int cloudCount = 0;
 
+    public GameObject carrotPrefab;
+    public int carrotCount = 1;
+    Vector3 carrotSpawnPosition = new Vector3();
+
 
     // Start is called before the first frame update
     void Start()
@@ -23,6 +27,12 @@ public class GameManager : MonoBehaviour
             spawnPosition.x = Random.Range(-2.2f, 2.2f);
             Instantiate(platformPrefab, spawnPosition, Quaternion.identity);
         }
+
+   
+            carrotSpawnPosition.y += Random.Range(.5f, 4f);
+            carrotSpawnPosition.x = Random.Range(-3f, 3f);
+            Instantiate(carrotPrefab, carrotSpawnPosition, Quaternion.identity);
+            carrotCount++;
 
         // Spawn 5 clouds
         while (cloudCount < 5) 
@@ -49,6 +59,13 @@ public class GameManager : MonoBehaviour
             Instantiate(platformPrefab, spawnPosition, Quaternion.identity);
             platformCount += 1;
         }
+
+            //spawn 1 carrot each frame
+            carrotSpawnPosition.y += Random.Range(.5f, 4f);
+            carrotSpawnPosition.x = Random.Range(-3f, 3f);
+            Instantiate(carrotPrefab, carrotSpawnPosition, Quaternion.identity);
+            carrotCount++;
+
 
         // Keep the cloud count at at least 3, and if it is over 3 then no more than 10 with a delay in spawn time
         if (cloudCount < 3 || (Time.time > cloudSpawnTime && cloudCount < 10))
