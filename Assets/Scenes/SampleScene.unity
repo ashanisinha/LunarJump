@@ -566,7 +566,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platformPrefab: {fileID: 3034663350740057914, guid: 6864cd33a3fa6c843a3f17dd9e2df4a2, type: 3}
-  platformCount: 300
+  platformCount: 30
 --- !u!4 &1962075717
 Transform:
   m_ObjectHideFlags: 0

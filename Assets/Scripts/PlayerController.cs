@@ -42,6 +42,18 @@ public class PlayerController : MonoBehaviour
             Flip();
         }
         
+        if (transform.position.x < -3.1f)
+        {
+
+            Vector3 temp = new Vector3(3.1f,transform.position.y,transform.position.z);
+            gameObject.transform.position = temp;
+        }
+        if (transform.position.x > 3.1f)
+        {
+            Vector3 temp = new Vector3(-3.1f,transform.position.y,transform.position.z);
+            gameObject.transform.position = temp;
+        }
+        
     }
 
     void Flip()
