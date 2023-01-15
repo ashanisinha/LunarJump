@@ -2,12 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerCtrl : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
     public float moveSpeed = 10f;
     public Rigidbody2D rb;
 
     private float moveX;
+    bool facingRight = true;
+
+    public Animator animator;
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -26,5 +30,26 @@ public class PlayerCtrl : MonoBehaviour
         Vector2 velocity = rb.velocity;
         velocity.x = moveX;
         rb.velocity = velocity;
+
+        animator.SetFloat("yVel", rb.velocity.y);
+
+        if (moveX > 0 && !facingRight)
+        {
+            Flip();
+        }
+        else if (moveX < 0 && facingRight)
+        {
+            Flip();
+        }
+        
+    }
+
+    void Flip()
+    {
+        Vector3 currentScale = gameObject.transform.localScale;
+        currentScale.x *= -1;
+        gameObject.transform.localScale = currentScale;
+
+        facingRight = !facingRight;
     }
 }
