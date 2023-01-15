@@ -21,18 +21,21 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Move the character horizontally based on input ('a' and 'd' or left and right arrow keys)
         moveX = Input.GetAxis("Horizontal") * moveSpeed;
 
     }
 
     private void FixedUpdate()
     {
+        // Set velocity
         Vector2 velocity = rb.velocity;
         velocity.x = moveX;
         rb.velocity = velocity;
 
         animator.SetFloat("yVel", rb.velocity.y);
 
+        // Depending on which way player is moving, flip the player
         if (moveX > 0 && !facingRight)
         {
             Flip();
@@ -42,13 +45,14 @@ public class PlayerController : MonoBehaviour
             Flip();
         }
         
+        // If on the edge of the screen, move the player to the other side
         if (transform.position.x < -3.1f)
         {
 
             Vector3 temp = new Vector3(3.1f,transform.position.y,transform.position.z);
             gameObject.transform.position = temp;
         }
-        if (transform.position.x > 3.1f)
+        else if (transform.position.x > 3.1f)
         {
             Vector3 temp = new Vector3(-3.1f,transform.position.y,transform.position.z);
             gameObject.transform.position = temp;
@@ -56,6 +60,7 @@ public class PlayerController : MonoBehaviour
         
     }
 
+    // Function for flipping the player sprite
     void Flip()
     {
         Vector3 currentScale = gameObject.transform.localScale;
