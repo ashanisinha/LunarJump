@@ -6,7 +6,6 @@ public class Platform : MonoBehaviour
 {   // further higher platforms go the more jump force changes
     // also can implement super jump here
     public float jumpForce = 10f;
-    public GameObject platform;
     public GameManager manager;
     
     void Start()
@@ -15,7 +14,7 @@ public class Platform : MonoBehaviour
     }
 
     private void OnCollisionEnter2D (Collision2D collision) {
-
+        // Check collision and make player jump up
         if (collision.relativeVelocity.y <= 0f) {
             Rigidbody2D rb = collision.gameObject.GetComponent<Rigidbody2D>();
             if (rb != null) {
@@ -32,10 +31,11 @@ public class Platform : MonoBehaviour
     }
     void Update()
     {
+        // If the platform is far enough below the screen, delete the platform
         if (Camera.main.transform.position.y - transform.position.y > 7.5)
         {
             manager.platformCount--;
-            Destroy(platform);
+            Destroy(gameObject);
         }
     }
 }

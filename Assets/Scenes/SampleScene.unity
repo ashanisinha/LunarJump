@@ -194,7 +194,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0.5294118, g: 0.80784315, b: 0.92156863, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -567,6 +567,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   platformPrefab: {fileID: 3034663350740057914, guid: 6864cd33a3fa6c843a3f17dd9e2df4a2, type: 3}
   platformCount: 30
+  cloudSprites:
+  - {fileID: 54439652, guid: 083c2e0ebac683645b622e4d479693e9, type: 3}
+  - {fileID: 733346492, guid: 083c2e0ebac683645b622e4d479693e9, type: 3}
+  - {fileID: 74027462, guid: 083c2e0ebac683645b622e4d479693e9, type: 3}
+  - {fileID: -146038423, guid: 083c2e0ebac683645b622e4d479693e9, type: 3}
+  cloudPrefab: {fileID: 723939495568090799, guid: d969c62d8e1b38e48940c915cad4597c, type: 3}
+  cloudSpawnTime: 1
 --- !u!4 &1962075717
 Transform:
   m_ObjectHideFlags: 0
@@ -591,7 +598,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3034663350740057914, guid: 6864cd33a3fa6c843a3f17dd9e2df4a2, type: 3}
       propertyPath: m_Name
-      value: Platform
+      value: FirstPlatform
       objectReference: {fileID: 0}
     - target: {fileID: 4447220257960088256, guid: 6864cd33a3fa6c843a3f17dd9e2df4a2, type: 3}
       propertyPath: m_RootOrder
