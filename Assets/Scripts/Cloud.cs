@@ -70,16 +70,24 @@ public class Cloud : MonoBehaviour
         transform.position = new Vector3(transform.position.x + xVel, camY + (startY - camStartY) - (camY - camStartY) / distAway, 0);
         
         // If on the edge of the screen, destroy the object
-        if (startedLeft)
+        if (camY - transform.position.y > 6.0f)
+        {
+            Destroy(gameObject);
+            manager.cloudCount--;
+        }
+        else if (startedLeft)
         {
             if (transform.position.x > xThresh)
             {
                 Destroy(gameObject);
+                manager.cloudCount--;
             }
         }
         else if (transform.position.x < -xThresh)
         {
             Destroy(gameObject);
+            manager.cloudCount--;
         }
+        
     }
 }

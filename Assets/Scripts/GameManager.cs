@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     
     public GameObject cloudPrefab;
     public float cloudSpawnTime = 1.0f;
-    private int cloudCount = 0;
+    public int cloudCount = 0;
 
 
     // Start is called before the first frame update
