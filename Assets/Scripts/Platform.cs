@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class platform : MonoBehaviour
+public class Platform : MonoBehaviour
 {   // further higher platforms go the more jump force changes
     // also can implement super jump here
     public float jumpForce = 10f; 
