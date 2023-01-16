@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
@@ -15,6 +17,11 @@ public class GameManager : MonoBehaviour
     public GameObject carrotPrefab;
     public int carrotCount = 0;
     Vector3 carrotSpawnPosition = new Vector3();
+
+    //making functions to end game
+    public Transform player;
+    public static bool endgame = false;
+    public TextMeshProUGUI gameOverText;
 
 
 
@@ -91,5 +98,16 @@ public class GameManager : MonoBehaviour
         }
         
         // Camera.main.transform.position
+
+        if (player.position.y < -1f){
+        endgame = true;
+       // Debug.Log("You died");
+        gameOverText.text = "Game Over";
+        Invoke("Restart", 3f); //3f is the delay before it restarts
+        }
+    }
+
+    void Restart() {
+        SceneManager.LoadScene("SampleScene");
     }
 }
