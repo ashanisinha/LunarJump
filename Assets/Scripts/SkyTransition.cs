@@ -13,6 +13,7 @@ public class SkyTransition : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        transform.localScale = new Vector3(0.31f, 0.31f, 1);
         transform.position = new Vector3(0, transitionStart, 0);
         manager = FindObjectOfType<GameManager>();
         manager.skyTransitionY = transitionStart;

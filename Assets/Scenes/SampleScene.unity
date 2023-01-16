@@ -335,7 +335,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.02, y: 0, z: -10}
+  m_LocalPosition: {x: 0, y: 3.9, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -609,7 +609,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 739247791}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.18, y: -0.11, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.6, y: 0.6, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -646,6 +646,7 @@ GameObject:
   m_Component:
   - component: {fileID: 756870378}
   - component: {fileID: 756870377}
+  - component: {fileID: 756870379}
   m_Layer: 0
   m_Name: TransitionSky
   m_TagString: Untagged
@@ -713,13 +714,28 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 756870376}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 59, z: 0}
+  m_LocalScale: {x: 0.31, y: 0.31, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &756870379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 756870376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0685c078f0ffa4b40ac1d5e6f762a641, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  transitionStart: 59
+  manager: {fileID: 0}
+  cameraOffset: 10
 --- !u!1 &1962075715
 GameObject:
   m_ObjectHideFlags: 0
@@ -898,7 +914,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1246806713398105503, guid: 43a1a1b15414e419dbd74f3fca7854dc, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.2
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 1246806713398105503, guid: 43a1a1b15414e419dbd74f3fca7854dc, type: 3}
       propertyPath: m_LocalPosition.z
@@ -947,7 +963,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2037681732760905424, guid: dc8d95f60c7da4233b0c8a42f0ad1f56, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.93
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2037681732760905424, guid: dc8d95f60c7da4233b0c8a42f0ad1f56, type: 3}
       propertyPath: m_LocalPosition.y
@@ -987,7 +1003,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2037681732760905426, guid: dc8d95f60c7da4233b0c8a42f0ad1f56, type: 3}
       propertyPath: m_Name
-      value: Carrot
+      value: Carrot_test
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc8d95f60c7da4233b0c8a42f0ad1f56, type: 3}
