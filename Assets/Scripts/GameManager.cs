@@ -31,6 +31,9 @@ public class GameManager : MonoBehaviour
     public static bool endgame = false;
     public TextMeshProUGUI gameOverText;
 
+    // Things to win game
+    public static float distToMoon = 382500f/2f;
+
 
     // TODO:
     // make transitions of sky and background
