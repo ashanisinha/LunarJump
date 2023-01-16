@@ -18,6 +18,8 @@ public class Cloud : MonoBehaviour
 
     private float xThresh = 4.1f;
 
+    public float fadeSpeed = 0.1f;
+
     void Start()
     {
         // Randomize the cloud sprite
@@ -62,7 +64,6 @@ public class Cloud : MonoBehaviour
         startY = gameObject.transform.position.y;
     }
 
-    // Update is called once per frame
     void LateUpdate()
     {
         // Update the position of the cloud (move left/right at a constant speed, and move "down" on the screen relative to the camera position)
@@ -87,6 +88,18 @@ public class Cloud : MonoBehaviour
         {
             Destroy(gameObject);
             manager.cloudCount--;
+        }
+        
+        // fade out
+        if (manager.starsOut)
+        {
+            Color objColor = this.GetComponent<SpriteRenderer>().material.color;
+            this.GetComponent<SpriteRenderer>().material.color = new Color(objColor.r, objColor.g, objColor.b, objColor.a - (fadeSpeed * Time.deltaTime));
+
+            if (this.GetComponent<SpriteRenderer>().material.color.a <= 0)
+            {
+                Destroy(gameObject);
+            }
         }
         
     }

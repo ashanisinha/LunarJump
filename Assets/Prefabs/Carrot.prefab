@@ -103,9 +103,8 @@ EdgeCollider2D:
   m_EdgeRadius: 0
   m_Points:
   - {x: -1.602577, y: -1.6997988}
-  - {x: -0.27499914, y: -1.0088954}
-  - {x: 0.30969667, y: -0.5665996}
-  - {x: 1.4291167, y: -1.8149949}
+  - {x: -1.4160941, y: -3.8749018}
+  - {x: 1.6630888, y: -3.7775884}
   - {x: 1.7813063, y: 1.1893556}
   - {x: 1.8488598, y: 2.2442932}
   - {x: -0.24372053, y: 1.3482423}
@@ -125,6 +124,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2037681732760905426}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d726e4c46f1834e59bfb3a108e79602f, type: 3}
+  m_Script: {fileID: 11500000, guid: 9fb00429d1bd8514999566ddac103304, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  manager: {fileID: 0}
