@@ -44,10 +44,7 @@ public class GameManager : MonoBehaviour
     // meteors
     // add score system
 
-    public float currentDistance() //calculate distance to the end - RC
-    {
-        return (Player.transform.position.y- distToMoon);
-    }
+
 
     // Start is called before the first frame update
     void Start()
@@ -166,9 +163,7 @@ public class GameManager : MonoBehaviour
         }
 
         //Track progress to change music
-        float progress = (currentDistance() / distToMoon) * 100;
-        //progress is negative... so I'll just do this lmao
-        progress += 100;
+        float progress = (player.transform.position.y/ distToMoon);
         Debug.Log($"progress: {progress}");
         Music.setParameterByName("Player Progress", progress);
         

@@ -232,7 +232,6 @@
 		<property name="quantizationInterval">
 			<value>2</value>
 		</property>
-		<property name="name" />
 		<property name="looping">
 			<value>2</value>
 		</property>
@@ -302,7 +301,6 @@
 		<property name="quantizationInterval">
 			<value>2</value>
 		</property>
-		<property name="name" />
 		<property name="looping">
 			<value>2</value>
 		</property>
@@ -326,7 +324,6 @@
 		<property name="quantizationInterval">
 			<value>2</value>
 		</property>
-		<property name="name" />
 		<property name="looping">
 			<value>2</value>
 		</property>
@@ -355,10 +352,10 @@
 	<object class="MixerBusPanner" id="{8fc7c555-e722-4980-ac2d-d085085e2665}" />
 	<object class="ParameterCondition" id="{adfb7efd-b721-417c-9f30-53d422b8a88b}">
 		<property name="minimum">
-			<value>1</value>
+			<value>0</value>
 		</property>
 		<property name="maximum">
-			<value>20</value>
+			<value>0.19191919191919191</value>
 		</property>
 		<relationship name="parameter">
 			<destination>{becfcedf-a474-4938-bd9d-9a845e574527}</destination>
@@ -366,10 +363,10 @@
 	</object>
 	<object class="ParameterCondition" id="{15d21536-9e9e-4a6c-8684-09701e1c333d}">
 		<property name="minimum">
-			<value>20</value>
+			<value>0.19191919191919191</value>
 		</property>
 		<property name="maximum">
-			<value>40</value>
+			<value>0.39393939393939392</value>
 		</property>
 		<relationship name="parameter">
 			<destination>{becfcedf-a474-4938-bd9d-9a845e574527}</destination>
@@ -377,10 +374,10 @@
 	</object>
 	<object class="ParameterCondition" id="{2d7ef1bf-7465-4135-a4bd-d1a082a6c6be}">
 		<property name="minimum">
-			<value>40</value>
+			<value>0.39393939393939392</value>
 		</property>
 		<property name="maximum">
-			<value>60</value>
+			<value>0.59595959595959591</value>
 		</property>
 		<relationship name="parameter">
 			<destination>{becfcedf-a474-4938-bd9d-9a845e574527}</destination>
@@ -388,10 +385,10 @@
 	</object>
 	<object class="ParameterCondition" id="{487e529a-bfb4-4e62-8307-924a1a111d2b}">
 		<property name="minimum">
-			<value>60</value>
+			<value>0.59595959595959591</value>
 		</property>
 		<property name="maximum">
-			<value>80</value>
+			<value>0.79797979797979801</value>
 		</property>
 		<relationship name="parameter">
 			<destination>{becfcedf-a474-4938-bd9d-9a845e574527}</destination>
@@ -399,10 +396,10 @@
 	</object>
 	<object class="ParameterCondition" id="{4611c6f5-5cda-45d5-8316-d3d256b342ab}">
 		<property name="minimum">
-			<value>80</value>
+			<value>0.79797979797979801</value>
 		</property>
 		<property name="maximum">
-			<value>100</value>
+			<value>1</value>
 		</property>
 		<relationship name="parameter">
 			<destination>{becfcedf-a474-4938-bd9d-9a845e574527}</destination>
