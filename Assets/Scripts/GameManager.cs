@@ -159,7 +159,7 @@ public class GameManager : MonoBehaviour
         if (player.position.y < -1f){
         endgame = true;
        // Debug.Log("You died");
-        gameOverText.text = "Game Over";
+        gameOverText.text = "game over";
         Invoke("Restart", 3f); //3f is the delay before it restarts
         }
     }
