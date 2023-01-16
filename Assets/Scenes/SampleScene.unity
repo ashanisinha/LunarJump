@@ -550,6 +550,41 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &624295420 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2037681732760905426, guid: dc8d95f60c7da4233b0c8a42f0ad1f56, type: 3}
+  m_PrefabInstance: {fileID: 2037681732005106983}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &624295425
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 624295420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: Player
+  EventReference:
+    Guid:
+      Data1: -1946776923
+      Data2: 1178730207
+      Data3: 833217434
+      Data4: 1823782869
+    Path: event:/Collect
+  Event: 
+  PlayEvent: 3
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &739247791
 GameObject:
   m_ObjectHideFlags: 0
@@ -564,6 +599,7 @@ GameObject:
   - component: {fileID: 739247793}
   - component: {fileID: 739247792}
   - component: {fileID: 739247797}
+  - component: {fileID: 739247798}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -720,6 +756,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &739247798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 739247791}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attenuationObject: {fileID: 739247791}
 --- !u!1 &756870376
 GameObject:
   m_ObjectHideFlags: 0
@@ -1122,6 +1171,82 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1450563182}
   m_CullTransparentMesh: 1
+--- !u!1 &1956655120
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1956655123}
+  - component: {fileID: 1956655122}
+  - component: {fileID: 1956655121}
+  m_Layer: 0
+  m_Name: MusicPlayer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &1956655121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1956655120}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a957b00da8a9547458827eace55d5f95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 739247791}
+--- !u!114 &1956655122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1956655120}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 589901431
+      Data2: 1288022972
+      Data3: 1251777448
+      Data4: 1447590584
+    Path: event:/Music
+  Event: 
+  PlayEvent: 1
+  StopEvent: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!4 &1956655123
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1956655120}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1962075715
 GameObject:
   m_ObjectHideFlags: 0
@@ -1132,6 +1257,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1962075717}
   - component: {fileID: 1962075716}
+  - component: {fileID: 1962075718}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1166,6 +1292,7 @@ MonoBehaviour:
   carrotCount: 1
   player: {fileID: 739247796}
   gameOverText: {fileID: 818014406}
+  Player: {fileID: 739247791}
 --- !u!4 &1962075717
 Transform:
   m_ObjectHideFlags: 0
@@ -1181,6 +1308,38 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1962075718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1962075715}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 589901431
+      Data2: 1288022972
+      Data3: 1251777448
+      Data4: 1447590584
+    Path: event:/Music
+  Event: 
+  PlayEvent: 1
+  StopEvent: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params:
+  - Name: Player Progress
+    Value: 1
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &2010569798
 GameObject:
   m_ObjectHideFlags: 0
@@ -1416,6 +1575,10 @@ PrefabInstance:
     - target: {fileID: 2037681732760905426, guid: dc8d95f60c7da4233b0c8a42f0ad1f56, type: 3}
       propertyPath: m_Name
       value: Carrot_test
+      objectReference: {fileID: 0}
+    - target: {fileID: 2037681732760905426, guid: dc8d95f60c7da4233b0c8a42f0ad1f56, type: 3}
+      propertyPath: m_TagString
+      value: Carrot
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc8d95f60c7da4233b0c8a42f0ad1f56, type: 3}

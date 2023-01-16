@@ -33,6 +33,8 @@ public class GameManager : MonoBehaviour
 
     // Things to win game
     public static float distToMoon = 382500f/2f;
+    public GameObject Player;
+    FMOD.Studio.EventInstance Music;
 
 
     // TODO:
@@ -41,6 +43,11 @@ public class GameManager : MonoBehaviour
     // make stars
     // meteors
     // add score system
+
+    public float currentDistance() //calculate distance to the end - RC
+    {
+        return (Player.transform.position.y- distToMoon);
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -69,6 +76,10 @@ public class GameManager : MonoBehaviour
             cloudSpawnTime = Time.time + Random.Range(3f, 10f);
             cloudCount += 1;
         }
+
+        //begin music - RC
+        Music = FMODUnity.RuntimeManager.CreateInstance("event:/Music");
+        Music.start();
     }
 
     // Update is called once per frame
@@ -153,6 +164,13 @@ public class GameManager : MonoBehaviour
                 }
             }
         }
+
+        //Track progress to change music
+        float progress = (currentDistance() / distToMoon) * 100;
+        //progress is negative... so I'll just do this lmao
+        progress += 100;
+        Debug.Log($"progress: {progress}");
+        Music.setParameterByName("Player Progress", progress);
         
         // Camera.main.transform.position
 
@@ -165,6 +183,8 @@ public class GameManager : MonoBehaviour
     }
 
     void Restart() {
+        Music.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        Music.release();
         SceneManager.LoadScene("SampleScene");
     }
 }
