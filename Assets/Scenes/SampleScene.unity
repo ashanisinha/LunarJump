@@ -730,7 +730,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 756870376}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0685c078f0ffa4b40ac1d5e6f762a641, type: 3}
+  m_Script: {fileID: 11500000, guid: d0a82183c5ab970448a947bdfc55d75e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   transitionStart: 59
@@ -795,6 +795,8 @@ MonoBehaviour:
   maxStars: 70
   carrotPrefab: {fileID: 2037681732760905426, guid: dc8d95f60c7da4233b0c8a42f0ad1f56, type: 3}
   carrotCount: 1
+  player: {fileID: 739247796}
+  gameOverText: {fileID: 0}
 --- !u!4 &1962075717
 Transform:
   m_ObjectHideFlags: 0
@@ -910,9 +912,17 @@ PrefabInstance:
       value: Platform
       objectReference: {fileID: 0}
     - target: {fileID: 1246806713398105502, guid: 43a1a1b15414e419dbd74f3fca7854dc, type: 3}
+      propertyPath: m_Size.x
+      value: 33.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1246806713398105502, guid: 43a1a1b15414e419dbd74f3fca7854dc, type: 3}
+      propertyPath: m_Size.y
+      value: 18.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1246806713398105502, guid: 43a1a1b15414e419dbd74f3fca7854dc, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: ddcb32cf5053c784aa2227e428335c36, type: 3}
+      objectReference: {fileID: 21300000, guid: 5f25b0a4fb376db489df9c63331b84c8, type: 3}
     - target: {fileID: 1246806713398105502, guid: 43a1a1b15414e419dbd74f3fca7854dc, type: 3}
       propertyPath: m_SortingOrder
       value: -5

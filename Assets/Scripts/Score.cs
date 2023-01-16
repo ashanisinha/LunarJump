@@ -7,7 +7,7 @@ using TMPro;
 public class Score : MonoBehaviour
 {
     public TextMeshProUGUI t;
-    public Transform player;
+    
     public string s;
     int score;
 
@@ -17,7 +17,8 @@ public class Score : MonoBehaviour
 
     void Update() {
         if(GameManager.endgame == false) {
-        score = (int)(player.position.y)+(SC_2DCoin.totalCoins * 10);
+        score = (int)(Camera.main.transform.position.y)+(Carrot.totalCarrots * 10);
+        print(score);
         s = "Score: " + score.ToString();
         t.text = s;
         }
