@@ -7,10 +7,12 @@ public class Platform : MonoBehaviour
     // also can implement super jump here
     public float jumpForce = 10f;
     public GameManager manager;
+    FMOD.Studio.EventInstance Jump;
     
     void Start()
     {
         manager = FindObjectOfType<GameManager>();
+        Jump = FMODUnity.RuntimeManager.CreateInstance("event:/Jump");
     }
 
     private void OnCollisionEnter2D (Collision2D collision) {
@@ -18,6 +20,7 @@ public class Platform : MonoBehaviour
         if (collision.relativeVelocity.y <= 0f) {
             Rigidbody2D rb = collision.gameObject.GetComponent<Rigidbody2D>();
             if (rb != null) {
+                Jump.start();
                 Vector2 velocity = rb.velocity;
                 velocity.y = jumpForce;
                 rb.velocity = velocity;
