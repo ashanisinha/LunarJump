@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class Moon : MonoBehaviour
 {
+    public GameManager manager;
     // Start is called before the first frame update
     void Start()
     {
+        manager = FindObjectOfType<GameManager>();
 
         // Set initial position
         transform.position = new Vector3(0f, GameManager.distToMoon, 0f);
@@ -26,6 +28,7 @@ public class Moon : MonoBehaviour
                 Vector2 velocity = rb.velocity;
                 velocity.y = 0;
                 rb.velocity = velocity;
+                manager.progress = 0;
             }
         }
 

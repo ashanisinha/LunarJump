@@ -26,7 +26,6 @@ public class Carrot : MonoBehaviour
             totalCarrots++;
             //Test: Print total number of coins
             // Debug.Log("You currently have " + Carrot.totalCarrots + " Coins.");
-            //Destroy coin
             manager.carrotCount--;
             Destroy(gameObject);
             Collect.start();

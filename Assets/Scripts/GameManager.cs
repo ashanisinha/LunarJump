@@ -35,6 +35,8 @@ public class GameManager : MonoBehaviour
     public static float distToMoon = 59f * 5f; // 382500f/2f;
     public GameObject Player;
     FMOD.Studio.EventInstance Music;
+    public float progress;
+    public bool win = false;
 
 
     // TODO:
@@ -49,6 +51,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        progress = 0;
         starsOut = false;
         spawnPosition = new Vector3(0, 1f, 0);
         carrotSpawnPosition = new Vector3(0, 1f, 0);
@@ -186,10 +189,18 @@ public class GameManager : MonoBehaviour
             }
         }
 
-        //Track progress to change music
-        float progress = (player.transform.position.y/ distToMoon);
-        // Debug.Log($"progress: {progress}");
-        Music.setParameterByName("Player Progress", progress);
+        if (progress < 1 && !win)
+        {
+            //Track progress to change music
+            progress = (player.transform.position.y / distToMoon);
+            // Debug.Log($"progress: {progress}");
+            print(progress);
+            Music.setParameterByName("Player Progress", progress);
+            win = true;
+        } else {
+            progress = 0;
+        }
+
         
         // Camera.main.transform.position
 
