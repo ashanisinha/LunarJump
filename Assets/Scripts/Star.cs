@@ -40,12 +40,12 @@ public class Star : MonoBehaviour
         // Tiny stars
         if (starSprite < 6)
         {
-            distAway = 55.0f + Mathf.Pow(Random.Range(0.0f, 1.0f), 4) * 30.0f;
+            distAway = 70.0f + Mathf.Pow(Random.Range(0.0f, 1.0f), 4) * 30.0f;
             manager.starCount += 1;
         }
         else if (starSprite < 8)
         {
-            distAway = 50.0f + Mathf.Pow(Random.Range(0.0f, 1.0f), 4) * 20.0f;
+            distAway = 55.0f + Mathf.Pow(Random.Range(0.0f, 1.0f), 4) * 20.0f;
             manager.starCount += 2;
         }
         else if (starSprite < 12)
@@ -55,12 +55,12 @@ public class Star : MonoBehaviour
         }
         else if (starSprite < 15)
         {
-            distAway = 35.0f + Mathf.Pow(Random.Range(0.0f, 1.0f), 4) * 15.0f;
+            distAway = 30.0f + Mathf.Pow(Random.Range(0.0f, 1.0f), 4) * 15.0f;
             manager.starCount += 4;
         }
         else
         {
-            distAway = 30.0f + Mathf.Pow(Random.Range(0.0f, 1.0f), 4) * 25.0f;
+            distAway = 20.0f + Mathf.Pow(Random.Range(0.0f, 1.0f), 4) * 15.0f;
             manager.starCount += 5;
         }
 

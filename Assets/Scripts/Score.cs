@@ -12,13 +12,12 @@ public class Score : MonoBehaviour
     int score;
 
     void Start() {
-        s = "Score: 0";
+        s = "score: 0";
     }
 
     void Update() {
         if(GameManager.endgame == false) {
         score = (int)(Camera.main.transform.position.y)+(Carrot.totalCarrots * 10);
-        print(score);
         s = "Score: " + score.ToString();
         t.text = s;
         }

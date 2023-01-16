@@ -31,6 +31,9 @@ public class GameManager : MonoBehaviour
     public static bool endgame = false;
     public TextMeshProUGUI gameOverText;
 
+    // Things to win game
+    public static float distToMoon = 382500f/2f;
+
 
     // TODO:
     // make transitions of sky and background
@@ -156,7 +159,7 @@ public class GameManager : MonoBehaviour
         if (player.position.y < -1f){
         endgame = true;
        // Debug.Log("You died");
-        gameOverText.text = "Game Over";
+        gameOverText.text = "game over";
         Invoke("Restart", 3f); //3f is the delay before it restarts
         }
     }
