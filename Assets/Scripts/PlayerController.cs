@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     bool facingRight = true;
 
     public Animator animator;
+    public bool isGameOver = false;
 
     // Start is called before the first frame update
     void Awake()
@@ -57,7 +58,7 @@ public class PlayerController : MonoBehaviour
             Vector3 temp = new Vector3(-3.1f,transform.position.y,transform.position.z);
             gameObject.transform.position = temp;
         }
-        
+
     }
 
     // Function for flipping the player sprite

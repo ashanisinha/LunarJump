@@ -13,13 +13,15 @@ public class GameManager : MonoBehaviour
     public int cloudCount = 0;
 
     public GameObject carrotPrefab;
-    public int carrotCount = 1;
+    public int carrotCount = 0;
     Vector3 carrotSpawnPosition = new Vector3();
+
 
 
     // Start is called before the first frame update
     void Start()
     {
+
         // Spawn 30 platforms
         for (int i = 0; i < platformCount; i++)
         {
@@ -50,7 +52,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
         // Keep the platform count at at least 30
         while (platformCount < 30)
         {
