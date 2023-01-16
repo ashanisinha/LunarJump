@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour
     public GameObject starPrefab;
     public int starCount = 0;
     public bool starsOut = false;
-    public bool initialStars = true;
+    public int starPhase = 0;
     public int maxStars = 70;
 
     public GameObject carrotPrefab;
@@ -32,7 +32,7 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI gameOverText;
 
     // Things to win game
-    public static float distToMoon = 382500f/2f;
+    public static float distToMoon = 59f * 5f; // 382500f/2f;
 
 
     // TODO:
@@ -76,7 +76,7 @@ public class GameManager : MonoBehaviour
     {
         
         // Keep the platform count at at least 30
-        while (platformCount < 30)
+        while (platformCount < 30 && spawnPosition.y < GameManager.distToMoon - 2f)
         {
             spawnPosition.y += Random.Range(.5f, 2f);
             spawnPosition.x = Random.Range(-2.2f, 2.2f);
@@ -85,7 +85,7 @@ public class GameManager : MonoBehaviour
         }
 
 
-        while (carrotCount < 30)
+        while (carrotCount < 30 && carrotSpawnPosition.y < GameManager.distToMoon - 5f)
         {
             carrotSpawnPosition.y += Random.Range(1f, 4f);
             carrotSpawnPosition.x = Random.Range(-2.5f, 2.5f);
@@ -129,7 +129,7 @@ public class GameManager : MonoBehaviour
                 Vector3 starSpawnPosition = new Vector3();
                 starSpawnPosition.y = Camera.main.transform.position.y + Random.Range(5f, 5.5f);
 
-                if (initialStars)
+                if (starPhase == 0)
                 {
                     int initCount = 0;
                     while(initCount <= maxStars) {
@@ -138,11 +138,9 @@ public class GameManager : MonoBehaviour
                         Instantiate(starPrefab, starSpawnPosition, Quaternion.identity);
                         initCount += 1;
                     }
-                    initialStars = false;
-                    print(starCount);
+                    starPhase = 1;
                     maxStars = 200;
-                }
-                else
+                } else if (starPhase == 1)
                 {
                     if (maxStars != starCount)
                     {
@@ -150,7 +148,33 @@ public class GameManager : MonoBehaviour
                     }
                     starSpawnPosition.x = Random.Range(-2.8f, 2.8f);
                     Instantiate(starPrefab, starSpawnPosition, Quaternion.identity);
+                    
+                    if (skyTransitionY + (GameManager.distToMoon - skyTransitionY) / 2 < Camera.main.transform.position.y)
+                    {
+                        starPhase = 2;
+                    }
+
+                } else if (starPhase == 2)
+                {
+                    int count = starCount;
+                    maxStars = 400;
+                    while(count <= maxStars) {
+                        starSpawnPosition.x = Random.Range(-2.8f, 2.8f);
+                        starSpawnPosition.y = Camera.main.transform.position.y + Random.Range(-5f, 5f);
+                        Instantiate(starPrefab, starSpawnPosition, Quaternion.identity);
+                        count += 1;
+                    }
+                    starPhase += 1;
+
+                } else {
+                    if (maxStars != starCount)
+                    {
+                        maxStars = Mathf.Max(400, starCount);
+                    }
+                    starSpawnPosition.x = Random.Range(-2.8f, 2.8f);
+                    Instantiate(starPrefab, starSpawnPosition, Quaternion.identity);
                 }
+
             }
         }
         

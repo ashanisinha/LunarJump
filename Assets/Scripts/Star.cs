@@ -23,8 +23,25 @@ public class Star : MonoBehaviour
         manager = FindObjectOfType<GameManager>();
 
         
-        // Randomize the cloud sprite
-        starSprite = Random.Range(0,17);
+        // Randomize the star sprite
+        if (manager.starPhase < 2)
+        {
+           starSprite = Random.Range(0,17);
+        }
+        else
+        {
+            float randStar = Random.Range(0f, 10f);
+            if (randStar < 8f)
+            {
+                starSprite = Random.Range(0, 8);
+            } else if (randStar < 9.8f)
+            {
+                starSprite = Random.Range(8, 15);
+            } else
+            {
+                starSprite = 16;
+            }
+        }
         // Choose the random sprite
         sr.sprite = starSprites[starSprite];
         /*

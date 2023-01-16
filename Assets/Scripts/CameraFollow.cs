@@ -13,7 +13,7 @@ public class CameraFollow : MonoBehaviour
 
     private void LateUpdate() { //transform is cameras position
         if (target.position.y > transform.position.y) {
-           Vector3 newPosition = new Vector3(transform.position.x, target.position.y, transform.position.z);
+           Vector3 newPosition = new Vector3(transform.position.x, Mathf.Min(target.position.y, GameManager.distToMoon), transform.position.z);
            transform.position = newPosition;
         } 
     }
