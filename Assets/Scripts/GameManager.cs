@@ -116,7 +116,7 @@ public class GameManager : MonoBehaviour
             if (starCount <= maxStars)
             {
                 Vector3 starSpawnPosition = new Vector3();
-                starSpawnPosition.y = Camera.main.transform.position.y + Random.Range(8f, 8.5f);
+                starSpawnPosition.y = Camera.main.transform.position.y + Random.Range(5f, 5.5f);
 
                 if (initialStars)
                 {
