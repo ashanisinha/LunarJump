@@ -46,15 +46,15 @@ public class PlayerController : MonoBehaviour
         }
         
         // If on the edge of the screen, move the player to the other side
-        if (transform.position.x < -3.1f)
+        if (transform.position.x < -2.8f)
         {
 
-            Vector3 temp = new Vector3(3.1f,transform.position.y,transform.position.z);
+            Vector3 temp = new Vector3(2.8f,transform.position.y,transform.position.z);
             gameObject.transform.position = temp;
         }
-        else if (transform.position.x > 3.1f)
+        else if (transform.position.x > 2.8f)
         {
-            Vector3 temp = new Vector3(-3.1f,transform.position.y,transform.position.z);
+            Vector3 temp = new Vector3(-2.8f,transform.position.y,transform.position.z);
             gameObject.transform.position = temp;
         }
         
