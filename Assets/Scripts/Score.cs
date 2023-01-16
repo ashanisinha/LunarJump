@@ -16,8 +16,10 @@ public class Score : MonoBehaviour
     }
 
     void Update() {
+        if(GameManager.endgame == false) {
         score = (int)(player.position.y)+(SC_2DCoin.totalCoins * 10);
         s = "Score: " + score.ToString();
         t.text = s;
+        }
     }
 }
