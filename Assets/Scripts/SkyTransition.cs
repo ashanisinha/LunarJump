@@ -20,12 +20,12 @@ public class SkyTransition : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
         if (transitionStart < Camera.main.transform.position.y + cameraOffset)
         {
             transform.position = new Vector3(transform.position.x, Camera.main.transform.position.y + cameraOffset
-             - (Camera.main.transform.position.y - transitionStart + cameraOffset) / 2f, 0);
+             - (Camera.main.transform.position.y - transitionStart + cameraOffset) / 3f, 0);
             manager.skyTransitionY = transform.position.y;
         }
     }
