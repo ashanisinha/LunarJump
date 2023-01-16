@@ -609,7 +609,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 739247791}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 0.6, y: 0.6, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -736,6 +736,23 @@ MonoBehaviour:
   transitionStart: 59
   manager: {fileID: 0}
   cameraOffset: 10
+--- !u!1 &790553206 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1246806713398105500, guid: 43a1a1b15414e419dbd74f3fca7854dc, type: 3}
+  m_PrefabInstance: {fileID: 1246806715136974764}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &790553212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 790553206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 913112e3864bd3348a900601b0c882f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1962075715
 GameObject:
   m_ObjectHideFlags: 0
@@ -771,7 +788,7 @@ MonoBehaviour:
   cloudSpawnTime: 1
   cloudCount: 0
   skyTransitionY: 59
-  starPrefab: {fileID: 0}
+  starPrefab: {fileID: 8399045218952765696, guid: cf99a9d53cb71e340bc5c5f432542f13, type: 3}
   starCount: 0
   starsOut: 0
   initialStars: 1
@@ -887,6 +904,10 @@ PrefabInstance:
     - target: {fileID: 1246806713398105500, guid: 43a1a1b15414e419dbd74f3fca7854dc, type: 3}
       propertyPath: m_Name
       value: Earth
+      objectReference: {fileID: 0}
+    - target: {fileID: 1246806713398105500, guid: 43a1a1b15414e419dbd74f3fca7854dc, type: 3}
+      propertyPath: m_TagString
+      value: Platform
       objectReference: {fileID: 0}
     - target: {fileID: 1246806713398105502, guid: 43a1a1b15414e419dbd74f3fca7854dc, type: 3}
       propertyPath: m_Sprite
