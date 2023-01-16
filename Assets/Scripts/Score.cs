@@ -17,9 +17,9 @@ public class Score : MonoBehaviour
 
     void Update() {
         if(GameManager.endgame == false) {
-        score = (int)(Camera.main.transform.position.y)+(Carrot.totalCarrots * 10);
-        s = "Score: " + score.ToString();
-        t.text = s;
+            score = (int)(Camera.main.transform.position.y)+(Carrot.totalCarrots * 10);
+            s = "score: " + score.ToString();
+            t.text = s;
         }
     }
 }

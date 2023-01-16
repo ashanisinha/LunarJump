@@ -156,14 +156,15 @@ public class GameManager : MonoBehaviour
         
         // Camera.main.transform.position
 
-        if (player.position.y < -1f){
-        endgame = true;
-       // Debug.Log("You died");
-        gameOverText.text = "game over";
-        Invoke("Restart", 3f); //3f is the delay before it restarts
+        if (player.position.y < Camera.main.transform.position.y - 10f){
+            endgame = true;
+            // Debug.Log("You died");
+            gameOverText.text = "game over";
+            Invoke("Restart", 3f); //3f is the delay before it restarts
         }
     }
 
+    // Restart the game
     void Restart() {
         SceneManager.LoadScene("SampleScene");
     }
