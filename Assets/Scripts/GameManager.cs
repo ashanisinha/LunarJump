@@ -188,7 +188,7 @@ public class GameManager : MonoBehaviour
 
         //Track progress to change music
         float progress = (player.transform.position.y/ distToMoon);
-        Debug.Log($"progress: {progress}");
+        // Debug.Log($"progress: {progress}");
         Music.setParameterByName("Player Progress", progress);
         
         // Camera.main.transform.position
