@@ -3,15 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class LoadingGame : MonoBehaviour
+public class End2 : MonoBehaviour
 {
-    // Update is called once per frame
+    // Start is called before the first frame update
     void Start()
     {
         Invoke("Call",8f);
     }
 
     void Call() {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("EndScene3");
 }
 }

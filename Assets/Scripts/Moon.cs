@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Moon : MonoBehaviour
 {
@@ -29,9 +30,15 @@ public class Moon : MonoBehaviour
             }
         }
 
+        Invoke("LoadEndScene", 5f);
+
         // print(Camera.main.transform.position.y);
         // print("My pos: " + transform.position.y);
 
 
+    }
+
+    void LoadEndScene() {
+        SceneManager.LoadScene("EndScene1");
     }
 }
