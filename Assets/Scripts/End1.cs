@@ -3,15 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class LoadingGame : MonoBehaviour
+public class End1 : MonoBehaviour
 {
-    // Update is called once per frame
     void Start()
     {
-        Invoke("Call",8f);
+        Invoke("Call",5f);
     }
 
     void Call() {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("EndScene2");
 }
 }

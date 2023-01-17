@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class LoadingNext : MonoBehaviour
 {
     // Update is called once per frame
-    void Update()
+    void Start()
     {
         Invoke("Calls",7f);
     }
