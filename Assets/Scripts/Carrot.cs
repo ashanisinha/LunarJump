@@ -19,22 +19,18 @@ public class Carrot : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D c2d)
     {
-        //Destroy the coin if Object tagged Player comes in contact with it
+        //Destroy the carrot if Object tagged Player comes in contact with it
         if (c2d.CompareTag("Player"))
         {
-            //Add coin to counter
+            //Add carrot to counter
             totalCarrots++;
-            //Test: Print total number of coins
+            //Test: Print total number of carrots
             // Debug.Log("You currently have " + Carrot.totalCarrots + " Coins.");
             manager.carrotCount--;
             Destroy(gameObject);
             Collect.start();
         }
-        // //Destroy the coin if Object tagged Platform comes in contact with it
-        // if (c2d.CompareTag("Platform"))
-        // {
-        //     Destroy(gameObject);
-        // }
+
     }
 
     void Update() 
